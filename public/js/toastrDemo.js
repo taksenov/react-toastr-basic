@@ -2958,6 +2958,7 @@ module.exports = reactProdInvariant;
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 const ToastrTypes = {
+    default: 'default',
     success: 'success',
     danger: 'danger'
 }
@@ -10024,7 +10025,7 @@ ToastrItem.propType = {
 };
 
 ToastrItem.defaultProps = {
-    toastrType: 'success'
+    toastrType: 'default'
 };
 
 /***/ }),

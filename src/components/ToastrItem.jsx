@@ -39,5 +39,5 @@ ToastrItem.propType = {
 }
 
 ToastrItem.defaultProps = {
-    toastrType: 'success'
+    toastrType: 'default'
 }
