@@ -22,6 +22,8 @@ export default class ToastrItem extends Component{
     render(){
             return (
                 <div className={this.state.className}>
+                    <strong>{this.props.title}</strong>
+                    <br />
                     {this.props.message}
                 </div>
             )
@@ -29,6 +31,7 @@ export default class ToastrItem extends Component{
 }
 
 ToastrItem.propType = {
+    title: React.PropTypes.string.isRequired,
     message: React.PropTypes.string.isRequired,
     toastrType: React.PropTypes.string
 }

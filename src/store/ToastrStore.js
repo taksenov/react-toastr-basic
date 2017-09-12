@@ -17,8 +17,8 @@ class ToastrStore extends EventEmitter{
                 this.id++;
                 this.toastrs.push({
                     id: this.id,
-                    title: 'Success',
-                    message: action.payload
+                    title: action.payload.title,
+                    message: action.payload.message
                 })
                 this.emit('change');
                 break;
@@ -30,9 +30,9 @@ class ToastrStore extends EventEmitter{
                 this.id++;
                 this.toastrs.push({
                     id: this.id,
-                    title: 'Success',
+                    title: action.payload.title,
                     type: ToastrTypes.danger,
-                    message: action.payload
+                    message: action.payload.message
                 })
                 this.emit('change');
                 break;

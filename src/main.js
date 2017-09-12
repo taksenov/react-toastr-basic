@@ -6,13 +6,13 @@ import './styles/react-toastr-basic.css';
 export default ToastrContainer;
 
 const Toast = ToastrActions.Pop;
-const ToastDanger = (msg) => {
-    ToastrActions.Pop(msg, ToastrTypes.danger);
+const ToastDanger = (title, msg) => {
+    ToastrActions.Pop(title, msg, ToastrTypes.danger);
 }
 
 const toastrStyle = './styles/react-toastr-basic.css';
 
-const ToastSuccess = (msg) => {
-     ToastrActions.Pop(msg, ToastrTypes.success);
+const ToastSuccess = (title, msg) => {
+     ToastrActions.Pop(title, msg, ToastrTypes.success);
 }
 export {Toast, ToastrTypes, ToastDanger, ToastSuccess};

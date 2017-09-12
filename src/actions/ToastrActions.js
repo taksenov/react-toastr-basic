@@ -1,7 +1,7 @@
 import ToastrDispatcher, {dispatchActions} from '../ToastrDispatcher';
 import ToastrTypes from '../common/ToastrTypes';
 
-export function Pop(message, toastrType){
+export function Pop(title, message, toastrType){
     if(!toastrType){
         toastrType = ToastrTypes.success;
     }
@@ -9,14 +9,20 @@ export function Pop(message, toastrType){
     if(toastrType == ToastrTypes.success){
         ToastrDispatcher.dispatch({
             type: dispatchActions.TOAST,
-            payload: message
+            payload: {
+                message: message,
+                title: title
+            }
         })
     }
     
     else if(toastrType == ToastrTypes.danger){
         ToastrDispatcher.dispatch({
             type: dispatchActions.TOAST_DANGER,
-            payload: message
+            payload: {
+                message: message,
+                title: title
+            }
         })
     }
 
