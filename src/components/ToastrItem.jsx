@@ -13,7 +13,9 @@ export default class ToastrItem extends Component{
         let className = 'toaster animated';
         if(this.props.toastrType == ToastrTypes.danger){
             className += ' danger shake';
-        }else{
+        } else if (this.props.toastrType === ToastrTypes.success) {
+            className += ' success';
+        } else {
             className += ' fadeIn';
         }
         this.setState({className:className})
