@@ -9987,6 +9987,8 @@ var ToastrItem = function (_Component) {
             var className = 'toaster animated';
             if (this.props.toastrType == _ToastrTypes2.default.danger) {
                 className += ' danger shake';
+            } else if (this.props.toastrType === _ToastrTypes2.default.success) {
+                className += ' success';
             } else {
                 className += ' fadeIn';
             }
@@ -13028,7 +13030,7 @@ exports = module.exports = __webpack_require__(94)(undefined);
 
 
 // module
-exports.push([module.i, "/* Notification */\n.rounded-corner {\n  border-radius: 5px;\n}\n.toaster-container {\n  position: fixed;\n  z-index: 20000;\n  right: 10px;\n  top: 10px;\n}\n.toaster {\n  background-color: #2E70B2;\n  color: white;\n  box-shadow: 2px 2px 12px #545454;\n  padding: 20px;\n  margin-bottom: 10px;\n  width: 200px;\n  border-radius: 5px;\n}\n.toaster.success {\n  background-color: #00a478;\n}\n.toaster.danger {\n  background-color: #ff4d4d;\n}\n", ""]);
+exports.push([module.i, "/* Notification */\n.rounded-corner {\n  border-radius: 5px;\n}\n.toaster-container {\n  position: fixed;\n  z-index: 20000;\n  right: 10px;\n  top: 10px;\n}\n.toaster {\n  background-color: #2E70B2;\n  color: white;\n  box-shadow: 2px 2px 12px #545454;\n  padding: 20px;\n  margin-bottom: 10px;\n  width: 200px;\n  border-radius: 5px;\n}\n.toaster.success {\n  background-color: #00a478 !important;\n}\n.toaster.danger {\n  background-color: #ff4d4d;\n}\n", ""]);
 
 // exports
 
@@ -43065,10 +43067,10 @@ module.exports = function(module) {
 
 function Pop(title, message, toastrType){
     if(!toastrType){
-        toastrType = __WEBPACK_IMPORTED_MODULE_1__common_ToastrTypes__["default"].success;
+        toastrType = __WEBPACK_IMPORTED_MODULE_1__common_ToastrTypes__["default"].default;
     }
 
-    if(toastrType == __WEBPACK_IMPORTED_MODULE_1__common_ToastrTypes__["default"].success){
+    if(toastrType == __WEBPACK_IMPORTED_MODULE_1__common_ToastrTypes__["default"].default){
         __WEBPACK_IMPORTED_MODULE_0__ToastrDispatcher__["a" /* default */].dispatch({
             type: __WEBPACK_IMPORTED_MODULE_0__ToastrDispatcher__["b" /* dispatchActions */].TOAST,
             payload: {
@@ -43081,6 +43083,16 @@ function Pop(title, message, toastrType){
     else if(toastrType == __WEBPACK_IMPORTED_MODULE_1__common_ToastrTypes__["default"].danger){
         __WEBPACK_IMPORTED_MODULE_0__ToastrDispatcher__["a" /* default */].dispatch({
             type: __WEBPACK_IMPORTED_MODULE_0__ToastrDispatcher__["b" /* dispatchActions */].TOAST_DANGER,
+            payload: {
+                message: message,
+                title: title
+            }
+        })
+    }
+
+    else if(toastrType == __WEBPACK_IMPORTED_MODULE_1__common_ToastrTypes__["default"].success){
+        __WEBPACK_IMPORTED_MODULE_0__ToastrDispatcher__["a" /* default */].dispatch({
+            type: __WEBPACK_IMPORTED_MODULE_0__ToastrDispatcher__["b" /* dispatchActions */].TOAST_SUCCESS,
             payload: {
                 message: message,
                 title: title
@@ -43145,6 +43157,16 @@ class ToastrStore extends __WEBPACK_IMPORTED_MODULE_0_events__["EventEmitter"]{
                     id: this.id,
                     title: action.payload.title,
                     type: __WEBPACK_IMPORTED_MODULE_2__common_ToastrTypes__["default"].danger,
+                    message: action.payload.message
+                })
+                this.emit('change');
+                break;
+            case __WEBPACK_IMPORTED_MODULE_1__ToastrDispatcher__["b" /* dispatchActions */].TOAST_SUCCESS:
+                this.id++;
+                this.toastrs.push({
+                    id: this.id,
+                    title: action.payload.title,
+                    type: __WEBPACK_IMPORTED_MODULE_2__common_ToastrTypes__["default"].success,
                     message: action.payload.message
                 })
                 this.emit('change');

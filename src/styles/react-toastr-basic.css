@@ -18,7 +18,7 @@
   border-radius: 5px;
 }
 .toaster.success {
-  background-color: #00a478;
+  background-color: #00a478 !important;
 }
 .toaster.danger {
   background-color: #ff4d4d;
