@@ -13028,7 +13028,7 @@ exports = module.exports = __webpack_require__(94)(undefined);
 
 
 // module
-exports.push([module.i, "/* Notification */\n.rounded-corner {\n  border-radius: 5px;\n}\n.toaster-container {\n  position: fixed;\n  z-index: 20000;\n  right: 10px;\n  top: 10px;\n}\n.toaster {\n  background-color: #2E70B2;\n  color: white;\n  box-shadow: 2px 2px 12px #545454;\n  padding: 20px;\n  margin-bottom: 10px;\n  width: 200px;\n}\n.rounded-corner .toaster.success {\n  background-color: #00a478;\n}\n.toaster.danger {\n  background-color: #ff4d4d;\n}\n", ""]);
+exports.push([module.i, "/* Notification */\n.rounded-corner {\n  border-radius: 5px;\n}\n.toaster-container {\n  position: fixed;\n  z-index: 20000;\n  right: 10px;\n  top: 10px;\n}\n.toaster {\n  background-color: #2E70B2;\n  color: white;\n  box-shadow: 2px 2px 12px #545454;\n  padding: 20px;\n  margin-bottom: 10px;\n  width: 200px;\n  border-radius: 5px;\n}\n.toaster.success {\n  background-color: #00a478;\n}\n.toaster.danger {\n  background-color: #ff4d4d;\n}\n", ""]);
 
 // exports
 

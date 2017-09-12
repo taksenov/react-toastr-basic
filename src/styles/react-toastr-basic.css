@@ -15,8 +15,9 @@
   padding: 20px;
   margin-bottom: 10px;
   width: 200px;
+  border-radius: 5px;
 }
-.rounded-corner .toaster.success {
+.toaster.success {
   background-color: #00a478;
 }
 .toaster.danger {
