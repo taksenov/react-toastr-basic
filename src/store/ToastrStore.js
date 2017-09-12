@@ -36,6 +36,16 @@ class ToastrStore extends EventEmitter{
                 })
                 this.emit('change');
                 break;
+            case dispatchActions.TOAST_SUCCESS:
+                this.id++;
+                this.toastrs.push({
+                    id: this.id,
+                    title: action.payload.title,
+                    type: ToastrTypes.success,
+                    message: action.payload.message
+                })
+                this.emit('change');
+                break;
         }
     }
 }

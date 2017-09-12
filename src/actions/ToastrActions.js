@@ -3,10 +3,10 @@ import ToastrTypes from '../common/ToastrTypes';
 
 export function Pop(title, message, toastrType){
     if(!toastrType){
-        toastrType = ToastrTypes.success;
+        toastrType = ToastrTypes.default;
     }
 
-    if(toastrType == ToastrTypes.success){
+    if(toastrType == ToastrTypes.default){
         ToastrDispatcher.dispatch({
             type: dispatchActions.TOAST,
             payload: {
@@ -19,6 +19,16 @@ export function Pop(title, message, toastrType){
     else if(toastrType == ToastrTypes.danger){
         ToastrDispatcher.dispatch({
             type: dispatchActions.TOAST_DANGER,
+            payload: {
+                message: message,
+                title: title
+            }
+        })
+    }
+
+    else if(toastrType == ToastrTypes.success){
+        ToastrDispatcher.dispatch({
+            type: dispatchActions.TOAST_SUCCESS,
             payload: {
                 message: message,
                 title: title
