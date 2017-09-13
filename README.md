@@ -1,3 +1,12 @@
+Forked from 
+<a href="https://github.com/kimwandev/react-toastr-basic">kimwandev/react-toastr-basic</a>
+
+How use:
+See images in
+<a href="https://github.com/taksenov/react-toastr-basic/tree/master/howToUse">https://github.com/taksenov/react-toastr-basic/tree/master/howToUse</a>
+
+---
+
 react-toastr-basic
 ===
 A simple react toastr for your application. Easy to install and easy to use. This application is based on react and flux
