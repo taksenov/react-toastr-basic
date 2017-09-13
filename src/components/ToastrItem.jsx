@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import ToastrTypes from '../common/ToastrTypes';
 
 export default class ToastrItem extends Component{
@@ -33,9 +34,9 @@ export default class ToastrItem extends Component{
 }
 
 ToastrItem.propType = {
-    title: React.PropTypes.string.isRequired,
-    message: React.PropTypes.string.isRequired,
-    toastrType: React.PropTypes.string
+    title      : PropTypes.string.isRequired,
+    message    : PropTypes.string.isRequired,
+    toastrType : PropTypes.string
 }
 
 ToastrItem.defaultProps = {
